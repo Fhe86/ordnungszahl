@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Hefteintrag: Ordnungszahl, Massenzahl und Isotope</title><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+:root{--gruen:#58b36f;--gd:#2f7d49;--gh:#e8f6ec;--gm:#cfeedb;--ink:#1d2b24;--grau:#5f6f66;--linie:#cfe0d3;--bg:#f1f8f0;--proton:#e5575a;--neutron:#8f9b95;--elektron:#3b82d9;--gelb:#f0a30a;--rot:#c9444a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Verdana,Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%;touch-action:manipulation}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:18px 20px 40px}
+.kopf{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.chip{display:inline-block;font-size:12px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--gd);color:var(--gd);border-radius:999px;padding:3px 14px;background:#fff}
+h1{font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;font-weight:900;font-size:clamp(26px,4.6vw,40px);line-height:1.08;margin:8px 0 4px;letter-spacing:-.02em}
+.lead{margin:0;color:var(--grau);max-width:640px}
+.box{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:22px 24px;margin-bottom:18px}
+h2{font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;font-size:21px;margin:0 0 6px}
+.btn{font-weight:bold;font-size:15px;color:#fff;background:var(--ink);border:2px solid var(--ink);border-radius:12px;padding:10px 18px;min-height:46px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.btn.ghost{background:#fff;color:var(--ink)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4}
+input.f{border:2px solid var(--ink);border-radius:10px;padding:6px 8px;min-height:44px;min-width:64px;text-align:center;background:#fffef6;font-weight:bold}
+input.f.ok{background:var(--gm);border-color:var(--gd)}
+input.f.nein{background:#fde4e4;border-color:var(--rot)}
+input.f.lang{text-align:left;min-width:190px}
+.meld{margin-top:12px;font-weight:bold;min-height:1.5em}
+.meld.gut{color:var(--gd)}.meld.schlecht{color:var(--rot)}
+.ks{display:inline-flex;align-items:center;gap:4px;font-family:Arial,sans-serif;vertical-align:middle}
+.ks .zz{display:inline-flex;flex-direction:column;justify-content:space-between;font-size:.55em;line-height:1.05;font-weight:bold;height:1.5em;text-align:right}
+.ks .zz .oben{color:#2b5ea8}.ks .zz .unten{color:var(--rot)}
+.ks .sy{font-size:1em;font-weight:bold}
+@media print{.noprint{display:none!important}body{background:#fff;font-size:14px}.wrap{padding:0}.box{border-radius:10px;break-inside:avoid;padding:12px 14px}input.f{border:0;border-bottom:2px solid #000;border-radius:0;background:#fff}}
+
+.kasten{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:20px;align-items:center}
+@media(max-width:700px){.kasten{grid-template-columns:1fr}}
+.satz{margin:14px 0;line-height:2.3}
+.satz .f{margin:0 4px}
+table{border-collapse:collapse;width:100%}
+th,td{border:2px solid var(--ink);padding:6px;text-align:center}th{background:var(--gh)}
+td.g{background:#eef2ef;font-weight:bold}
+td input.f{width:100%}
+.merke{background:#f1f1ed;border-top:6px dotted var(--rot);border-bottom:6px dotted var(--rot);padding:12px 18px;margin:14px 0}
+</style></head><body><div class="wrap">
+<div class="kopf"><div><span class="chip">NuT · Atombau · Hefteintrag</span><h1>Hefteintrag: Ordnungszahl, Massenzahl und Isotope</h1><p class="lead">Lücken füllen, prüfen und als PDF sichern.</p></div><a class="btn ghost noprint" href="../index.html#material">Zur Stundenseite</a></div>
+
+<div class="box">
+ <div class="kasten">
+  <svg viewBox="0 0 300 250" role="img" aria-label="Schreibweise am Symbol: Massenzahl oben, Ordnungszahl unten">
+   <rect x="2" y="2" width="296" height="54" rx="4" fill="#9fb8e0"/><text x="12" y="24" font-size="15" font-weight="bold" font-family="Arial">Massenzahl</text><text x="12" y="44" font-size="12" font-family="Arial">= Protonen + Neutronen</text>
+   <line x1="70" y1="56" x2="70" y2="94" stroke="#999" stroke-width="2"/>
+   <rect x="42" y="94" width="130" height="66" fill="#fff" stroke="#222" stroke-width="2"/>
+   <text x="50" y="119" font-size="20" font-family="Arial" fill="#2b5ea8" font-weight="bold">7</text><text x="50" y="150" font-size="20" font-family="Arial" fill="#c9444a" font-weight="bold">3</text>
+   <text x="84" y="147" font-size="54" font-family="Arial" font-weight="bold">Li</text>
+   <line x1="70" y1="160" x2="70" y2="194" stroke="#999" stroke-width="2"/>
+   <rect x="2" y="194" width="296" height="54" rx="4" fill="#eeaaa9"/><text x="12" y="216" font-size="15" font-weight="bold" font-family="Arial">Ordnungszahl</text><text x="12" y="237" font-size="12" font-family="Arial">= Protonen = Elektronen</text>
+  </svg>
+  <div class="lead" style="margin:0;font-size:15px">Beispiel Lithium: 7 Teilchen im Kern (Massenzahl), davon 3 Protonen (Ordnungszahl). Der Rest sind Neutronen: 7 − 3 = 4.</div>
+ </div>
+</div>
+
+<div class="box">
+ <h2>Merke</h2>
+ <div class="satz">Alle Atome eines Elements haben gleich viele <input class="f lang" data-a="protonen"> im Kern.</div>
+ <div class="satz">Die Zahl der Protonen heißt <input class="f lang" data-a="ordnungszahl">. Sie steht unten links am Symbol.</div>
+ <div class="satz">Ein neutrales Atom hat genauso viele <input class="f lang" data-a="elektronen"> in der Hülle wie Protonen im Kern.</div>
+ <div class="satz">Protonen und Neutronen zusammen ergeben die <input class="f lang" data-a="massenzahl">. Sie steht oben links am Symbol.</div>
+ <div class="satz">Neutronenzahl = <input class="f lang" data-a="massenzahl"> minus <input class="f lang" data-a="ordnungszahl"></div>
+ <div class="satz">Atome eines Elements mit verschieden vielen Neutronen heißen <input class="f lang" data-a="isotope"></div>
+</div>
+
+<div class="box">
+ <h2>Beispiel: Isotope bei Wasserstoff</h2>
+ <table id="wt"></table>
+ <p class="lead" style="margin-top:10px;font-size:15px">Isotope haben die gleichen chemischen Eigenschaften, aber verschiedene Massen.</p>
+</div>
+
+<div class="box">
+ <h2>Beispiel: Sauerstoff-16 und Sauerstoff-18</h2>
+ <div class="satz">Sauerstoff-16 (O-16) hat <input class="f" data-a="8" inputmode="numeric"> Protonen und <input class="f" data-a="8" inputmode="numeric"> Neutronen. Sauerstoff-18 (O-18) hat <input class="f" data-a="8" inputmode="numeric"> Protonen und <input class="f" data-a="10" inputmode="numeric"> Neutronen.</div>
+</div>
+
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap">
+ <button class="btn" id="pruefen">Prüfen</button>
+ <button class="btn ghost" id="loesung">Lösung zeigen</button>
+ <button class="btn ghost" onclick="window.print()">Als PDF sichern</button>
+</div>
+<div class="meld" id="meld" aria-live="polite"></div>
+
+</div><script>
+const EL=[null,["H","Wasserstoff",1],["He","Helium",4],["Li","Lithium",7],["Be","Beryllium",9],["B","Bor",11],["C","Kohlenstoff",12],["N","Stickstoff",14],["O","Sauerstoff",16],["F","Fluor",19],["Ne","Neon",20],["Na","Natrium",23],["Mg","Magnesium",24],["Al","Aluminium",27],["Si","Silicium",28],["P","Phosphor",31],["S","Schwefel",32],["Cl","Chlor",35],["Ar","Argon",40],["K","Kalium",39],["Ca","Calcium",40]];
+function ks(a,z,sym){return '<span class="ks"><span class="zz"><span class="oben">'+a+'</span><span class="unten">'+z+'</span></span><span class="sy">'+sym+'</span></span>';}
+
+const $=s=>document.querySelector(s);
+$("#wt").innerHTML="<tr><th></th><th>Wasserstoff</th><th>Deuterium</th><th>Tritium</th></tr><tr><td class='g'>Schreibweise</td><td>"+ks(1,1,"H")+"</td><td>"+ks(2,1,"H")+"</td><td>"+ks(3,1,"H")+"</td></tr><tr><td class='g'>Protonen</td><td class='g'>1</td><td class='g'>1</td><td class='g'>1</td></tr><tr><td class='g'>Neutronen</td><td><input class='f' data-a='0' inputmode='numeric'></td><td><input class='f' data-a='1' inputmode='numeric'></td><td><input class='f' data-a='2' inputmode='numeric'></td></tr>";
+const felder=()=>[...document.querySelectorAll("input.f")];
+$("#pruefen").onclick=()=>{let ok=0;const f=felder();f.forEach(i=>{const w=i.value.trim().toLowerCase();const r=i.dataset.a.split("|").indexOf(w)>=0;i.classList.toggle("ok",r);i.classList.toggle("nein",!r&&w!=="");if(r)ok++});const m=$("#meld");m.className="meld "+(ok===f.length?"gut":"schlecht");m.textContent=ok===f.length?"Alles richtig! Jetzt als PDF sichern.":ok+" von "+f.length+" Lücken richtig."};
+$("#loesung").onclick=()=>{felder().forEach(i=>{i.value=i.dataset.a.split("|")[0];i.value=i.value.charAt(0).toUpperCase()+i.value.slice(1);i.classList.add("ok");i.classList.remove("nein")})};
+</script></body></html>

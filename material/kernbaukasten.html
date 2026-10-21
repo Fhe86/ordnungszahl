@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Kernbaukasten</title><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+:root{--gruen:#58b36f;--gd:#2f7d49;--gh:#e8f6ec;--gm:#cfeedb;--ink:#1d2b24;--grau:#5f6f66;--linie:#cfe0d3;--bg:#f1f8f0;--proton:#e5575a;--neutron:#8f9b95;--elektron:#3b82d9;--gelb:#f0a30a;--rot:#c9444a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Verdana,Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%;touch-action:manipulation}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:18px 20px 40px}
+.kopf{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.chip{display:inline-block;font-size:12px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--gd);color:var(--gd);border-radius:999px;padding:3px 14px;background:#fff}
+h1{font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;font-weight:900;font-size:clamp(26px,4.6vw,40px);line-height:1.08;margin:8px 0 4px;letter-spacing:-.02em}
+.lead{margin:0;color:var(--grau);max-width:640px}
+.box{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:22px 24px;margin-bottom:18px}
+h2{font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;font-size:21px;margin:0 0 6px}
+.btn{font-weight:bold;font-size:15px;color:#fff;background:var(--ink);border:2px solid var(--ink);border-radius:12px;padding:10px 18px;min-height:46px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.btn.ghost{background:#fff;color:var(--ink)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4}
+input.f{border:2px solid var(--ink);border-radius:10px;padding:6px 8px;min-height:44px;min-width:64px;text-align:center;background:#fffef6;font-weight:bold}
+input.f.ok{background:var(--gm);border-color:var(--gd)}
+input.f.nein{background:#fde4e4;border-color:var(--rot)}
+input.f.lang{text-align:left;min-width:190px}
+.meld{margin-top:12px;font-weight:bold;min-height:1.5em}
+.meld.gut{color:var(--gd)}.meld.schlecht{color:var(--rot)}
+.ks{display:inline-flex;align-items:center;gap:4px;font-family:Arial,sans-serif;vertical-align:middle}
+.ks .zz{display:inline-flex;flex-direction:column;justify-content:space-between;font-size:.55em;line-height:1.05;font-weight:bold;height:1.5em;text-align:right}
+.ks .zz .oben{color:#2b5ea8}.ks .zz .unten{color:var(--rot)}
+.ks .sy{font-size:1em;font-weight:bold}
+@media print{.noprint{display:none!important}body{background:#fff;font-size:14px}.wrap{padding:0}.box{border-radius:10px;break-inside:avoid;padding:12px 14px}input.f{border:0;border-bottom:2px solid #000;border-radius:0;background:#fff}}
+
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.stage{position:relative;aspect-ratio:1;max-width:460px;margin:0 auto;background:radial-gradient(circle at 50% 50%,#fff,#eef8f0 75%);border-radius:20px;border:2px solid var(--linie)}
+svg{width:100%;height:100%;display:block}
+.bahn{fill:none;stroke:#b7d8c1;stroke-width:1.6;stroke-dasharray:3 5}.bahn.b{stroke:var(--gruen);stroke-dasharray:none;stroke-width:2}
+.kern circle{stroke:#fff;stroke-width:1.2}
+.bigks{font-size:62px;text-align:center;margin:10px 0 0;line-height:1.1;min-height:84px}
+.name{text-align:center;font-weight:bold;font-size:20px;margin:0}
+.tag{text-align:center;color:var(--grau);font-size:14px;min-height:22px;margin:2px 0 10px}
+.zeilen{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.z{border:2px solid var(--ink);border-radius:14px;padding:8px;text-align:center;background:#fff}
+.z b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--grau)}
+.z .w{font-size:30px;font-weight:900;line-height:1.15}
+.z.p .w{color:var(--proton)}.z.n .w{color:var(--neutron)}.z.e .w{color:var(--elektron)}
+.pm{display:flex;gap:6px;justify-content:center;margin-top:4px}
+.pm button{width:52px;height:46px;border:2px solid var(--ink);background:var(--gh);border-radius:12px;font-size:24px;font-weight:bold;cursor:pointer;line-height:1}
+.pm button:active{background:var(--gm)}.pm button:disabled{opacity:.35}
+.periodik{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-bottom:6px}
+@media(max-width:520px){.periodik{grid-template-columns:repeat(5,1fr)}}
+.pk{border:2px solid var(--linie);background:#fff;border-radius:10px;padding:4px 0 3px;min-height:48px;line-height:1.1;cursor:pointer}
+.pk small{display:block;font-size:10px;color:var(--grau)}.pk b{font-size:15px}
+.pk.on{background:var(--gruen);border-color:var(--gd);color:#fff}.pk.on small{color:#eaffef}
+.samml{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.sc{border:2px solid var(--ink);border-radius:14px;padding:6px 12px;background:#fff;font-size:26px;display:flex;align-items:center;gap:8px}
+.sc small{font-size:13px;color:var(--grau);font-family:Verdana,sans-serif}
+.sc.iso{background:var(--gm);border-color:var(--gd)}
+.karte{display:flex;gap:12px;border:2px solid var(--ink);border-radius:16px;padding:12px 14px;margin-bottom:10px;background:#f6fbf6}
+.karte.fertig{background:var(--gm)}
+.karte .nr{flex:none;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font-weight:bold;display:grid;place-items:center}
+.karte p{margin:0 0 4px}.karte .tipp{font-size:14px;color:var(--grau)}
+.haken{flex:none;margin-left:auto;width:46px;height:46px;border:2px solid var(--ink);border-radius:12px;background:#fff;color:#fff;font-size:22px;cursor:pointer}
+.karte.fertig .haken{background:var(--gd)}
+</style></head><body><div class="wrap">
+<div class="kopf"><div><span class="chip">NuT · Atombau · iPad</span><h1>Kernbaukasten</h1><p class="lead">Baue Atomkerne und finde heraus, was Ordnungszahl und Massenzahl bedeuten.</p></div><a class="btn ghost noprint" href="../index.html#material">Zur Stundenseite</a></div>
+
+<div class="grid">
+ <div class="box">
+  <div class="stage"><svg id="svg" viewBox="0 0 400 400" role="img" aria-label="Atomkern und Hülle"></svg></div>
+  <div class="bigks" id="bigks"></div>
+  <p class="name" id="name"></p>
+  <p class="tag" id="tag"></p>
+  <div class="zeilen">
+   <div class="z p"><b>Protonen</b><span class="w" id="vp"></span><div class="pm"><button data-k="p" data-d="-1" aria-label="Proton weniger">−</button><button data-k="p" data-d="1" aria-label="Proton mehr">+</button></div></div>
+   <div class="z n"><b>Neutronen</b><span class="w" id="vn"></span><div class="pm"><button data-k="n" data-d="-1" aria-label="Neutron weniger">−</button><button data-k="n" data-d="1" aria-label="Neutron mehr">+</button></div></div>
+   <div class="z e"><b>Elektronen</b><span class="w" id="ve"></span><div class="klein" style="font-size:12px;color:var(--grau);margin-top:6px">immer so viele wie Protonen</div></div>
+  </div>
+  <button class="btn" id="merken">Dieses Atom merken</button>
+ </div>
+ <div>
+  <div class="box">
+   <h2>Element wählen</h2>
+   <div class="periodik" id="periodik"></div>
+  </div>
+  <div class="box">
+   <h2>Meine Sammlung</h2>
+   <div class="samml" id="samml"></div>
+   <div class="meld" id="meld" aria-live="polite">Baue ein Atom und tippe auf „Dieses Atom merken“.</div>
+   <button class="btn ghost" id="leeren" style="margin-top:8px">Sammlung leeren</button>
+  </div>
+ </div>
+</div>
+<div class="box">
+ <h2>Entdeckerkarten</h2>
+ <p class="lead" style="margin-bottom:12px">Probiere jede Karte im Baukasten aus. Schreibe deine Antwort ins Heft und hake ab.</p>
+ <div id="karten"></div>
+</div>
+
+</div><script>
+const EL=[null,["H","Wasserstoff",1],["He","Helium",4],["Li","Lithium",7],["Be","Beryllium",9],["B","Bor",11],["C","Kohlenstoff",12],["N","Stickstoff",14],["O","Sauerstoff",16],["F","Fluor",19],["Ne","Neon",20],["Na","Natrium",23],["Mg","Magnesium",24],["Al","Aluminium",27],["Si","Silicium",28],["P","Phosphor",31],["S","Schwefel",32],["Cl","Chlor",35],["Ar","Argon",40],["K","Kalium",39],["Ca","Calcium",40]];
+function ks(a,z,sym){return '<span class="ks"><span class="zz"><span class="oben">'+a+'</span><span class="unten">'+z+'</span></span><span class="sy">'+sym+'</span></span>';}
+
+const BAHN=[44,70,96,122], KAP=[2,8,8,8];
+const NS="http://www.w3.org/2000/svg";
+const $=s=>document.querySelector(s);
+const st={p:6,n:6};
+let sammlung=[];
+function el(n,a,p){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function fuellen(e){const a=[0,0,0,0];for(let i=0;i<4&&e>0;i++){const t=Math.min(KAP[i],e);a[i]=t;e-=t}return a}
+function aktualisieren(){
+  const svg=$("#svg");svg.innerHTML="";
+  const sh=fuellen(st.p);
+  for(let i=0;i<4;i++)el("circle",{cx:200,cy:200,r:BAHN[i],class:"bahn"+(sh[i]>0?" b":"")},svg);
+  const kern=el("g",{class:"kern"},svg);
+  const gold=Math.PI*(3-Math.sqrt(5)), gesamt=st.p+st.n, arten=[];
+  for(let i=0;i<st.p;i++)arten.push("p");for(let i=0;i<st.n;i++)arten.push("n");
+  const mix=arten.map((t,i)=>({t,k:(i*7919)%(gesamt||1)})).sort((a,b)=>a.k-b.k);
+  const sk=Math.min(1,1+(0.0))*4.3;
+  mix.forEach((m,i)=>{const r=sk*Math.sqrt(i+.5),a=i*gold;
+    el("circle",{cx:200+r*Math.cos(a),cy:200+r*Math.sin(a),r:4.2,fill:m.t==="p"?"var(--proton)":"var(--neutron)"},kern);
+    if(m.t==="p"){const t=el("text",{x:200+r*Math.cos(a),y:200+r*Math.sin(a)+2.6,"text-anchor":"middle","font-size":7,"font-weight":"bold",fill:"#fff"},kern);t.textContent="+"}});
+  const t0=performance.now()/1000;
+  elektronen=[];
+  sh.forEach((n,i)=>{for(let k=0;k<n;k++){const g=el("g",{},svg);el("circle",{r:7,fill:"var(--elektron)",stroke:"#fff","stroke-width":2},g);const t=el("text",{y:3,"text-anchor":"middle","font-size":9,"font-weight":"bold",fill:"#fff"},g);t.textContent="−";elektronen.push({g,i,k,n})}});
+  bewegen(t0);
+  const e=EL[st.p],A=st.p+st.n;
+  $("#vp").textContent=st.p;$("#vn").textContent=st.n;$("#ve").textContent=st.p;
+  $("#bigks").innerHTML=ks(A,st.p,e[0]);
+  let nm=e[1]+"-"+A; if(st.p===1&&st.n===1)nm="Deuterium (Wasserstoff-2)"; if(st.p===1&&st.n===2)nm="Tritium (Wasserstoff-3)";
+  $("#name").textContent=nm;
+  $("#tag").textContent="Ordnungszahl "+st.p+", Massenzahl "+A+(st.n!==e[2]-st.p?", Isotop von "+e[1]:"");
+  document.querySelectorAll(".pk").forEach(b=>b.classList.toggle("on",+b.dataset.z===st.p));
+  document.querySelectorAll(".pm button").forEach(b=>{const k=b.dataset.k,d=+b.dataset.d;b.disabled=(k==="p"&&((d<0&&st.p<=1)||(d>0&&st.p>=20)))||(k==="n"&&((d<0&&st.n<=0)||(d>0&&st.n>=24)))});
+}
+let elektronen=[];
+function bewegen(t){elektronen.forEach(o=>{const a=2*Math.PI*o.k/o.n+t*(o.i%2?-1:1)*0.9/(1+o.i*.55)-Math.PI/2;o.g.setAttribute("transform","translate("+(200+BAHN[o.i]*Math.cos(a)).toFixed(1)+","+(200+BAHN[o.i]*Math.sin(a)).toFixed(1)+")")})}
+const still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+(function loop(ms){if(!still)bewegen(ms/1000);requestAnimationFrame(loop)})(0);
+const pk=$("#periodik");
+for(let z=1;z<=20;z++){const b=document.createElement("button");b.className="pk";b.dataset.z=z;b.type="button";b.setAttribute("aria-label",EL[z][1]);b.innerHTML="<small>"+z+"</small><b>"+EL[z][0]+"</b>";b.onclick=()=>{st.p=z;st.n=EL[z][2]-z;aktualisieren()};pk.appendChild(b)}
+document.querySelectorAll(".pm button").forEach(b=>b.onclick=()=>{st[b.dataset.k]+=+b.dataset.d;aktualisieren()});
+function sammlungZeichnen(){
+  const box=$("#samml");box.innerHTML="";
+  const zaehl={};sammlung.forEach(s=>{zaehl[s.p]=(zaehl[s.p]||new Set()).add(s.n)});
+  sammlung.forEach(s=>{const d=document.createElement("div");d.className="sc"+(zaehl[s.p].size>1?" iso":"");d.innerHTML=ks(s.p+s.n,s.p,EL[s.p][0])+"<small>"+s.n+" Neutronen</small>";box.appendChild(d)});
+}
+$("#merken").onclick=()=>{
+  const m=$("#meld");
+  if(sammlung.some(s=>s.p===st.p&&s.n===st.n)){m.className="meld schlecht";m.textContent="Dieses Atom hast du schon.";return}
+  sammlung.push({p:st.p,n:st.n});sammlungZeichnen();
+  const gleiche=sammlung.filter(s=>s.p===st.p);
+  if(gleiche.length>1){m.className="meld gut";m.textContent="Gleiche Protonenzahl, andere Neutronenzahl: Das sind Isotope von "+EL[st.p][1]+".";}
+  else{m.className="meld";m.textContent="Gemerkt."}
+};
+$("#leeren").onclick=()=>{sammlung=[];sammlungZeichnen();$("#meld").className="meld";$("#meld").textContent="Sammlung leer."};
+const KARTEN=[
+ ["Neutronen dazugeben","Wähle Lithium. Gib Neutronen dazu und nimm sie weg. Welche Zahl in der Schreibweise oben links am Symbol ändert sich, welche bleibt gleich?","Schau auf die zwei Zahlen links vom Symbol."],
+ ["Drei Wasserstoffe","Baue Wasserstoff mit 0, 1 und 2 Neutronen und merke jedes Atom. Wie heißen die drei? Was haben sie gemeinsam?","Die Namen stehen unter der großen Schreibweise."],
+ ["Kohlenstoff-12 und Kohlenstoff-14","Stelle beide ein und merke sie. Wie viele Neutronen hat jedes, wie viele Protonen, wie viele Elektronen?","Rechne Massenzahl minus Ordnungszahl."],
+ ["Das Element wechseln","Starte bei Kohlenstoff und erhöhe die Protonenzahl um 1. Was ist jetzt anders: der Name, die Neutronenzahl, die Elektronenzahl? Was bestimmt also das Element?","Probiere es mit der Elementleiste und mit dem Plus-Knopf."],
+ ["Chlor-Sorten","Baue Chlor mit 18 Neutronen (Chlor-35). Baue dann Chlor-37. Wie viele Neutronen braucht es?","Der Hinweis „Isotop von Chlor“ taucht auf."]
+];
+let erledigt=new Set();try{erledigt=new Set(JSON.parse(localStorage.getItem("kernbaukasten")||"[]"))}catch(e){}
+function karten(){const b=$("#karten");b.innerHTML="";KARTEN.forEach((k,i)=>{const d=document.createElement("div");d.className="karte"+(erledigt.has(i)?" fertig":"");d.innerHTML="<div class='nr'>"+(i+1)+"</div><div><p><b>"+k[0]+"</b></p><p>"+k[1]+"</p><p class='tipp'>Tipp: "+k[2]+"</p></div><button class='haken' type='button' aria-label='Erledigt'>✓</button>";d.querySelector(".haken").onclick=()=>{erledigt.has(i)?erledigt.delete(i):erledigt.add(i);try{localStorage.setItem("kernbaukasten",JSON.stringify([...erledigt]))}catch(e){}karten()};b.appendChild(d)})}
+karten();aktualisieren();
+</script></body></html>

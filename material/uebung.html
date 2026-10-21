@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Übungen: Ordnungszahl, Massenzahl, Isotope</title><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+:root{--gruen:#58b36f;--gd:#2f7d49;--gh:#e8f6ec;--gm:#cfeedb;--ink:#1d2b24;--grau:#5f6f66;--linie:#cfe0d3;--bg:#f1f8f0;--proton:#e5575a;--neutron:#8f9b95;--elektron:#3b82d9;--gelb:#f0a30a;--rot:#c9444a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Verdana,Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%;touch-action:manipulation}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:18px 20px 40px}
+.kopf{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.chip{display:inline-block;font-size:12px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--gd);color:var(--gd);border-radius:999px;padding:3px 14px;background:#fff}
+h1{font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;font-weight:900;font-size:clamp(26px,4.6vw,40px);line-height:1.08;margin:8px 0 4px;letter-spacing:-.02em}
+.lead{margin:0;color:var(--grau);max-width:640px}
+.box{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:22px 24px;margin-bottom:18px}
+h2{font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;font-size:21px;margin:0 0 6px}
+.btn{font-weight:bold;font-size:15px;color:#fff;background:var(--ink);border:2px solid var(--ink);border-radius:12px;padding:10px 18px;min-height:46px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.btn.ghost{background:#fff;color:var(--ink)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4}
+input.f{border:2px solid var(--ink);border-radius:10px;padding:6px 8px;min-height:44px;min-width:64px;text-align:center;background:#fffef6;font-weight:bold}
+input.f.ok{background:var(--gm);border-color:var(--gd)}
+input.f.nein{background:#fde4e4;border-color:var(--rot)}
+input.f.lang{text-align:left;min-width:190px}
+.meld{margin-top:12px;font-weight:bold;min-height:1.5em}
+.meld.gut{color:var(--gd)}.meld.schlecht{color:var(--rot)}
+.ks{display:inline-flex;align-items:center;gap:4px;font-family:Arial,sans-serif;vertical-align:middle}
+.ks .zz{display:inline-flex;flex-direction:column;justify-content:space-between;font-size:.55em;line-height:1.05;font-weight:bold;height:1.5em;text-align:right}
+.ks .zz .oben{color:#2b5ea8}.ks .zz .unten{color:var(--rot)}
+.ks .sy{font-size:1em;font-weight:bold}
+@media print{.noprint{display:none!important}body{background:#fff;font-size:14px}.wrap{padding:0}.box{border-radius:10px;break-inside:avoid;padding:12px 14px}input.f{border:0;border-bottom:2px solid #000;border-radius:0;background:#fff}}
+
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{border:2px solid var(--ink);padding:6px 6px;text-align:center}
+th{background:var(--gh);font-size:13px}
+td.g{background:#eef2ef;font-weight:bold}
+td input.f{width:100%;min-width:56px}
+.scroll{overflow-x:auto}
+details{border:2px solid var(--linie);border-radius:14px;padding:8px 14px;margin:10px 0;background:#fff}
+summary{font-weight:bold;cursor:pointer;min-height:36px;display:flex;align-items:center}
+.zeile{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0;padding:10px 12px;border:2px solid var(--linie);border-radius:14px}
+.zeile .ks{font-size:34px}
+.paar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:10px 0;padding:10px 14px;border:2px solid var(--linie);border-radius:14px}
+.paar .ks{font-size:32px}
+.jn{display:flex;gap:8px}
+.jn button{min-width:70px;border:2px solid var(--ink);background:#fff;border-radius:12px;padding:8px 14px;font-weight:bold;cursor:pointer;min-height:44px}
+.jn button.ok{background:var(--gm);border-color:var(--gd)}.jn button.nein{background:#fde4e4;border-color:var(--rot)}
+.erkl{flex-basis:100%;font-size:14px;color:var(--grau)}
+</style></head><body><div class="wrap">
+<div class="kopf"><div><span class="chip">NuT · Atombau · iPad</span><h1>Übungen: Ordnungszahl, Massenzahl, Isotope</h1><p class="lead">Tabelle, Schreibweise und Isotope zum Ausfüllen. Mit Prüfen siehst du sofort, was stimmt.</p></div><a class="btn ghost noprint" href="../index.html#material">Zur Stundenseite</a></div>
+
+<div class="box">
+ <h2>Aufgabe 1: Tabelle ergänzen</h2>
+ <p class="lead" style="margin-bottom:10px">Die grauen Felder sind vorgegeben. Fülle die weißen Felder aus. Das Periodensystem steht in deinem Schulbuch.</p>
+ <details><summary>Hilfe: Elemente 1 bis 20 mit häufigster Massenzahl</summary><div class="scroll"><table id="hilfe"></table></div></details>
+ <div class="scroll"><table id="tab1"></table></div>
+ <button class="btn" data-pruefe="tab1" style="margin-top:12px">Prüfen</button><div class="meld" id="m-tab1" aria-live="polite"></div>
+</div>
+
+<div class="box">
+ <h2>Aufgabe 2: Schreibweise am Elementsymbol</h2>
+ <p class="lead" style="margin-bottom:6px">Trage Massenzahl (oben) und Ordnungszahl (unten) ein und schreibe das Symbol dazu.</p>
+ <div id="a2"></div>
+ <button class="btn" data-pruefe="a2" style="margin-top:8px">Prüfen</button><div class="meld" id="m-a2" aria-live="polite"></div>
+</div>
+
+<div class="box">
+ <h2>Aufgabe 3: Rechnen mit den Zahlen</h2>
+ <div class="zeile">a) Ein Chlor-Atom hat 17 Protonen und 18 Neutronen. Ordnungszahl: <input class="f" data-a="17" inputmode="numeric"> Massenzahl: <input class="f" data-a="35" inputmode="numeric"></div>
+ <div class="zeile">b) Zu welchem Element gehören Atome mit 6 Protonen? <input class="f lang" data-a="kohlenstoff|c"></div>
+ <div class="zeile">c) Es gibt zwei Kohlenstoff-Isotope mit 6 bzw. 8 Neutronen. Massenzahlen: <input class="f" data-a="12" inputmode="numeric"> und <input class="f" data-a="14" inputmode="numeric"></div>
+ <button class="btn" data-pruefe="a3" id="b3" style="margin-top:8px">Prüfen</button><div class="meld" id="m-a3" aria-live="polite"></div>
+</div>
+
+<div class="box" id="a3b">
+ <h2>Aufgabe 4: Lithium-Isotope</h2>
+ <p class="lead" style="margin-bottom:10px">Lithium hat die Isotope Li-6, Li-7, Li-8 und Li-9. Bestimme jeweils die Protonen- und die Neutronenzahl.</p>
+ <div class="scroll"><table id="tab4"></table></div>
+ <button class="btn" data-pruefe="tab4" style="margin-top:12px">Prüfen</button><div class="meld" id="m-tab4" aria-live="polite"></div>
+</div>
+
+<div class="box">
+ <h2>Aufgabe 5: Isotope oder nicht?</h2>
+ <p class="lead" style="margin-bottom:6px">Tippe bei jedem Paar auf Ja oder Nein.</p>
+ <div id="paare"></div>
+</div>
+
+</div><script>
+const EL=[null,["H","Wasserstoff",1],["He","Helium",4],["Li","Lithium",7],["Be","Beryllium",9],["B","Bor",11],["C","Kohlenstoff",12],["N","Stickstoff",14],["O","Sauerstoff",16],["F","Fluor",19],["Ne","Neon",20],["Na","Natrium",23],["Mg","Magnesium",24],["Al","Aluminium",27],["Si","Silicium",28],["P","Phosphor",31],["S","Schwefel",32],["Cl","Chlor",35],["Ar","Argon",40],["K","Kalium",39],["Ca","Calcium",40]];
+function ks(a,z,sym){return '<span class="ks"><span class="zz"><span class="oben">'+a+'</span><span class="unten">'+z+'</span></span><span class="sy">'+sym+'</span></span>';}
+
+const $=s=>document.querySelector(s);
+const hilfe=$("#hilfe");
+hilfe.innerHTML="<tr><th>Z</th><th>Symbol</th><th>Name</th><th>Massenzahl</th></tr>"+EL.slice(1).map((e,i)=>"<tr><td>"+(i+1)+"</td><td>"+e[0]+"</td><td>"+e[1]+"</td><td>"+e[2]+"</td></tr>").join("");
+function zelle(wert,gegeben,typ){return gegeben?"<td class='g'>"+wert+"</td>":"<td><input class='f' data-a=\""+String(wert).toLowerCase()+"\" "+(typ==="t"?"":"inputmode='numeric'")+" autocomplete='off' autocapitalize='none'></td>"}
+const ZEILEN=[[4,9,"g:name,A"],[7,14,"g:name,n"],[12,24,"g:sym,A"],[13,27,"g:Z,n"],[15,31,"g:e,A"],[19,39,"g:sym,n"]];
+let h="<tr><th>Element</th><th>Symbol</th><th>Ordnungszahl</th><th>Massenzahl</th><th>Protonen</th><th>Elektronen</th><th>Neutronen</th></tr>";
+ZEILEN.forEach(r=>{const z=r[0],A=r[1],g=r[2].slice(2).split(","),e=EL[z];
+  const has=k=>g.indexOf(k)>=0;
+  h+="<tr>"+zelle(e[1],has("name"),"t")+zelle(e[0],has("sym"),"t")+zelle(z,has("Z"))+zelle(A,has("A"))+zelle(z,false)+zelle(z,has("e"))+zelle(A-z,has("n"))+"</tr>"});
+$("#tab1").innerHTML=h;
+const A2=[["Sauerstoff-16",16,8,"O"],["Chlor-37",37,17,"Cl"],["Kalium-39",39,19,"K"],["Neon-22",22,10,"Ne"]];
+$("#a2").innerHTML=A2.map(r=>"<div class='zeile'><b style='min-width:130px'>"+r[0]+"</b><span class='ks'><span class='zz' style='height:auto;gap:6px'><input class='f' data-a='"+r[1]+"' inputmode='numeric'><input class='f' data-a='"+r[2]+"' inputmode='numeric'></span><input class='f' data-a='"+r[3].toLowerCase()+"' autocapitalize='none'></span></div>").join("");
+const A4=[["Li-6",3,3],["Li-7",3,4],["Li-8",3,5],["Li-9",3,6]];
+$("#tab4").innerHTML="<tr><th>Isotop</th><th>Protonen</th><th>Neutronen</th></tr>"+A4.map(r=>"<tr><td class='g'>"+r[0]+"</td>"+zelle(r[1])+zelle(r[2])+"</tr>").join("");
+function pruefe(box,melde){
+  const f=[...box.querySelectorAll("input.f")];let ok=0;
+  f.forEach(i=>{const w=i.value.trim().toLowerCase().replace(/\s+/g,"");const r=i.dataset.a.split("|").indexOf(w)>=0;i.classList.toggle("ok",r);i.classList.toggle("nein",!r&&w!=="");if(r)ok++});
+  melde.className="meld "+(ok===f.length?"gut":"schlecht");
+  melde.textContent=ok===f.length?"Alles richtig!":ok+" von "+f.length+" Feldern richtig. Rote Felder noch einmal prüfen.";
+}
+document.querySelectorAll("[data-pruefe]").forEach(b=>b.onclick=()=>{
+  const id=b.dataset.pruefe;
+  const box=id==="a3"?b.closest(".box"):document.getElementById(id).closest(".box");
+  pruefe(box,document.getElementById("m-"+id));
+});
+const PAARE=[[12,6,"C",14,6,"C",true,"Gleiche Protonenzahl (6), andere Neutronenzahl (6 und 8): Isotope."],[14,6,"C",14,7,"N",false,"Gleiche Massenzahl, aber verschiedene Protonenzahl. Das sind zwei verschiedene Elemente, keine Isotope."],[35,17,"Cl",37,17,"Cl",true,"Beide haben 17 Protonen, aber 18 und 20 Neutronen."],[23,11,"Na",24,12,"Mg",false,"Verschiedene Protonenzahl (11 und 12): verschiedene Elemente."],[16,8,"O",18,8,"O",true,"8 Protonen, aber 8 und 10 Neutronen: Isotope von Sauerstoff."]];
+$("#paare").innerHTML=PAARE.map((p,i)=>"<div class='paar'>"+ks(p[0],p[1],p[2])+" und "+ks(p[3],p[4],p[5])+"<div class='jn'><button data-i='"+i+"' data-v='1'>Ja</button><button data-i='"+i+"' data-v='0'>Nein</button></div><div class='erkl' id='e"+i+"'></div></div>").join("");
+document.querySelectorAll(".jn button").forEach(b=>b.onclick=()=>{
+  const p=PAARE[+b.dataset.i],ja=b.dataset.v==="1",r=ja===p[6];
+  b.parentNode.querySelectorAll("button").forEach(x=>x.classList.remove("ok","nein"));b.classList.add(r?"ok":"nein");
+  document.getElementById("e"+b.dataset.i).textContent=r?"Richtig. "+p[7]:"Noch nicht. Zähle die Protonen beider Atome.";
+});
+</script></body></html>
